@@ -1,0 +1,69 @@
+You are building a real estate website for Everyday Properties, a Twin Cities-based company that helps homeowners sell properties that need work.
+
+BRAND VOICE:
+- Modern, efficient, straightforward
+- Warm and human, not corporate
+- Options-focused, not pressure sales
+- Professional but approachable
+- Never say "we buy houses fast for cash" — say "we offer options for your property"
+
+DESIGN PRINCIPLES:
+- Typography: DM Serif Display for headlines (emotive, warm), DM Sans for body
+- Colors: Green (#22c55e) for CTAs and accents, Dark (#111) for contrast, Cream (#faf9f7) for warmth
+- Spacing: Generous whitespace, 56px standard horizontal padding, 110px section padding
+- Animations: Subtle, purposeful fade-ups and slide-ins using Framer Motion
+- Border radius: 8px for buttons, 16-20px for cards
+- Images: Use placeholder divs with descriptive text until real photos are added
+
+TECH STACK:
+- Next.js 14+ with App Router
+- TypeScript (strict)
+- Tailwind CSS
+- Framer Motion for scroll animations
+- ShadCN UI components where appropriate
+
+CODE STYLE:
+- Use TypeScript strictly
+- Component-based architecture (src/components/sections/, src/components/ui/)
+- Mobile-first responsive design
+- Semantic HTML (section, nav, main, article, footer)
+- Accessibility-first (ARIA labels, focus states, keyboard navigation)
+- Use CSS custom properties for colors (defined in globals.css)
+
+DESIGN TOKENS:
+- --green: #22c55e
+- --green-dark: #16a34a  
+- --dark: #111111
+- --cream: #faf9f7
+- --text-primary: #111111
+- --text-secondary: #555555
+- --text-muted: #888888
+
+TYPOGRAPHY:
+- Hero headlines: DM Serif Display, 64px, font-weight 400
+- Section headlines: DM Serif Display, 44px
+- Body text: DM Sans, 17px, line-height 1.7
+- Labels: DM Sans, 11px uppercase, letter-spacing 2px, green color
+- Buttons: DM Sans, 14-15px, font-weight 500
+
+COMPONENT PATTERNS:
+- Sections alternate between white and cream backgrounds
+- Dark sections (#111) used sparingly for emphasis (stats bar, featured cards)
+- Full-width sections with max-width content containers
+- Split-screen layouts for visual interest
+- Large image placeholders (gray gradient, centered descriptive text)
+
+ANIMATION PATTERNS:
+- Use Framer Motion's whileInView for scroll-triggered animations
+- Default: opacity 0 → 1, translateY 20px → 0, duration 0.6s
+- Stagger children by 0.1-0.2s delay
+- Use once: true to prevent re-triggering
+
+NEVER:
+- Use stock photo URLs (use placeholder divs with descriptive text)
+- Use Lorem ipsum (use real copy from the wireframes)
+- Over-animate (one animation per element max)
+- Use Inter, Roboto, or system fonts
+- Use emojis in headlines (only in benefit icons)
+- Create components without TypeScript interfaces
+- Skip mobile responsive styles

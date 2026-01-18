@@ -1,0 +1,73 @@
+---
+description: Component patterns and best practices
+globs: ["src/components/**/*.tsx"]
+alwaysApply: false
+---
+
+# Component Patterns
+
+## Section Components
+
+### Standard Section Structure
+```tsx
+<section className="py-28 px-14 bg-white">
+  <div className="max-w-[1100px] mx-auto">
+    <SectionHeader label="LABEL" headline="Headline" />
+    {/* Content */}
+  </div>
+</section>
+```
+
+### Split-Screen Pattern
+```tsx
+<section className="grid grid-cols-1 lg:grid-cols-2 min-h-[600px]">
+  <div className="p-20 flex flex-col justify-center bg-cream">
+    {/* Content */}
+  </div>
+  <div className="bg-gradient-to-br from-gray-200 to-gray-300">
+    {/* Visual placeholder */}
+  </div>
+</section>
+```
+
+## Animation Wrapper
+Always wrap animated elements with Framer Motion:
+```tsx
+<motion.div
+  initial={{ opacity: 0, y: 20 }}
+  whileInView={{ opacity: 1, y: 0 }}
+  transition={{ duration: 0.6 }}
+  viewport={{ once: true }}
+>
+  {children}
+</motion.div>
+```
+
+## Image Placeholders
+Never use real image URLs. Use this pattern:
+```tsx
+<div className="h-[400px] bg-gradient-to-br from-gray-200 to-gray-300 flex items-center justify-center">
+  <span className="text-gray-500 text-sm px-4 py-2 bg-black/60 text-white rounded-md">
+    [Description of intended image]
+  </span>
+</div>
+```
+
+## Button Variants
+- Primary (green): `bg-green hover:bg-green-dark text-white`
+- Secondary (dark): `bg-dark hover:bg-gray-800 text-white`
+- Outline: `border-2 border-gray-300 hover:border-dark text-dark`
+- White (on dark): `bg-white text-dark hover:bg-gray-100`
+
+## Responsive Patterns
+Mobile-first approach:
+```tsx
+// Grid columns
+className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3"
+
+// Padding
+className="py-16 px-6 lg:py-28 lg:px-14"
+
+// Typography
+className="text-4xl lg:text-6xl"
+```

@@ -1,0 +1,47 @@
+---
+description: Design system rules for Everyday Properties website
+globs: ["**/*.tsx", "**/*.css"]
+alwaysApply: true
+---
+
+# Design System Rules
+
+## Typography
+- Headlines: `font-serif` (DM Serif Display)
+- Body text: `font-sans` (DM Sans)
+- Hero headlines: 64px (text-6xl), line-height 1.08
+- Section headlines: 44px (text-4xl)
+- Body text: 17px, line-height 1.7
+
+## Colors (CSS Variables)
+- `var(--green)` #22c55e - Primary CTAs
+- `var(--green-dark)` #16a34a - Hover states
+- `var(--dark)` #111111 - Dark sections, secondary buttons
+- `var(--cream)` #faf9f7 - Alternating backgrounds
+- `var(--text-primary)` #111111
+- `var(--text-secondary)` #555555
+- `var(--text-muted)` #888888
+
+## Spacing
+- Section padding: `py-28 px-14` (110px, 56px)
+- Mobile section: `py-16 px-6`
+- Card gaps: 32px
+- Grid gaps: 48-64px
+
+## Components
+- Buttons: rounded-lg (8px), py-3 px-6
+- Cards: rounded-2xl (20px)
+- Icons: rounded-xl (16px)
+
+## Animations (Framer Motion)
+- Default: `whileInView={{ opacity: 1, y: 0 }}`
+- Initial: `initial={{ opacity: 0, y: 20 }}`
+- Duration: 0.6s
+- Viewport: `viewport={{ once: true }}`
+- Stagger children by 0.1s
+
+## Never
+- Use Inter, Roboto, or system fonts for visible text
+- Use Lorem ipsum
+- Use stock photo URLs
+- Skip mobile responsive styles

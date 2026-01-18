@@ -1,0 +1,2058 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Everyday Properties - V4 Wireframes (Enhanced Type Five Influence)</title>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=DM+Serif+Display&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: #0a0a0a;
+            color: #333;
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+        
+        /* Wireframe Navigation */
+        .wireframe-nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: #111;
+            padding: 12px 24px;
+            display: flex;
+            gap: 8px;
+            z-index: 1000;
+            flex-wrap: wrap;
+            border-bottom: 1px solid #2a2a2a;
+            align-items: center;
+        }
+        
+        .wireframe-nav button {
+            padding: 8px 16px;
+            border: 1px solid #333;
+            background: transparent;
+            color: #888;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 13px;
+            font-weight: 500;
+            transition: all 0.2s;
+        }
+        
+        .wireframe-nav button:hover {
+            background: #1a1a1a;
+            border-color: #444;
+            color: #fff;
+        }
+        
+        .wireframe-nav button.active {
+            background: #fff;
+            color: #000;
+            border-color: #fff;
+        }
+        
+        .wireframe-nav .nav-label {
+            color: #555;
+            font-size: 11px;
+            padding: 8px 12px;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+        }
+        
+        .version-badge {
+            background: linear-gradient(135deg, #22c55e 0%, #15803d 100%);
+            color: white;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 10px;
+            font-weight: 600;
+            margin-left: auto;
+            letter-spacing: 0.5px;
+        }
+        
+        .version-notes {
+            color: #666;
+            font-size: 11px;
+            margin-left: 8px;
+        }
+        
+        /* Page Container */
+        .page {
+            display: none;
+            margin-top: 56px;
+            background: #fff;
+        }
+        
+        .page.active {
+            display: block;
+        }
+        
+        /* Site Navigation - Refined Type Five Style */
+        .site-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 24px 56px;
+            background: #fff;
+            position: sticky;
+            top: 56px;
+            z-index: 100;
+            border-bottom: 1px solid rgba(0,0,0,0.06);
+        }
+        
+        .logo {
+            font-family: 'DM Serif Display', Georgia, serif;
+            font-size: 18px;
+            font-weight: 400;
+            color: #111;
+            letter-spacing: 0;
+        }
+        
+        .logo span {
+            font-family: 'DM Sans', sans-serif;
+            font-weight: 400;
+            color: #666;
+            font-size: 14px;
+            margin-left: 4px;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 44px;
+            align-items: center;
+        }
+        
+        .nav-links a {
+            color: #555;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+            transition: color 0.2s;
+            letter-spacing: -0.1px;
+        }
+        
+        .nav-links a:hover {
+            color: #111;
+        }
+        
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 13px 26px;
+            background: #111;
+            color: white;
+            border-radius: 8px;
+            font-weight: 500;
+            font-size: 14px;
+            text-decoration: none;
+            border: none;
+            cursor: pointer;
+            transition: all 0.2s;
+            letter-spacing: -0.1px;
+        }
+        
+        .btn:hover {
+            background: #2a2a2a;
+            transform: translateY(-1px);
+        }
+        
+        .btn-large {
+            padding: 18px 36px;
+            font-size: 15px;
+        }
+        
+        .btn-outline {
+            background: transparent;
+            border: 1.5px solid #ddd;
+            color: #333;
+        }
+        
+        .btn-outline:hover {
+            border-color: #111;
+            background: transparent;
+            transform: translateY(-1px);
+        }
+        
+        .btn-white {
+            background: #fff;
+            color: #111;
+        }
+        
+        .btn-white:hover {
+            background: #f8f8f8;
+        }
+        
+        .btn-green {
+            background: #22c55e;
+        }
+        
+        .btn-green:hover {
+            background: #16a34a;
+        }
+        
+        /* ===== HERO - Type Five Emotive Style ===== */
+        .hero {
+            padding: 100px 56px 0;
+            background: #fff;
+        }
+        
+        .hero-content {
+            max-width: 720px;
+            margin-bottom: 56px;
+        }
+        
+        .hero h1 {
+            font-family: 'DM Serif Display', Georgia, serif;
+            font-size: 64px;
+            line-height: 1.08;
+            color: #111;
+            margin-bottom: 28px;
+            font-weight: 400;
+            letter-spacing: -1px;
+        }
+        
+        .hero-subtitle {
+            font-size: 19px;
+            color: #555;
+            margin-bottom: 36px;
+            line-height: 1.7;
+            max-width: 540px;
+        }
+        
+        .hero-cta-group {
+            display: flex;
+            gap: 16px;
+            align-items: center;
+        }
+        
+        .hero-image {
+            width: calc(100% + 112px);
+            margin-left: -56px;
+            height: 520px;
+            background: linear-gradient(135deg, #e8e8e8 0%, #d4d4d4 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #999;
+            font-size: 14px;
+            margin-top: 48px;
+            position: relative;
+        }
+        
+        .hero-image::before {
+            content: '[Warm, inviting home exterior — family arriving, keys in hand]';
+            position: absolute;
+            padding: 12px 20px;
+            background: rgba(0,0,0,0.7);
+            color: #fff;
+            font-size: 12px;
+            border-radius: 6px;
+        }
+        
+        /* ===== TRUST TICKER ===== */
+        .trust-ticker {
+            background: #111;
+            color: #fff;
+            padding: 18px 0;
+            overflow: hidden;
+        }
+        
+        .ticker-content {
+            display: flex;
+            gap: 80px;
+            animation: scroll 25s linear infinite;
+            white-space: nowrap;
+        }
+        
+        @keyframes scroll {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+        
+        .ticker-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 14px;
+            color: #999;
+        }
+        
+        .ticker-item strong {
+            font-size: 18px;
+            color: #22c55e;
+            font-weight: 600;
+        }
+        
+        /* ===== RE-SHAPING SECTION (Type Five Style) ===== */
+        .reshaping-section {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            min-height: 600px;
+        }
+        
+        .reshaping-content {
+            padding: 100px 80px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            background: #faf9f7;
+        }
+        
+        .reshaping-content h2 {
+            font-family: 'DM Serif Display', Georgia, serif;
+            font-size: 40px;
+            color: #111;
+            margin-bottom: 24px;
+            font-weight: 400;
+            letter-spacing: -0.5px;
+            line-height: 1.15;
+        }
+        
+        .reshaping-content p {
+            font-size: 17px;
+            color: #555;
+            line-height: 1.75;
+            margin-bottom: 32px;
+            max-width: 480px;
+        }
+        
+        .reshaping-visual {
+            background: linear-gradient(135deg, #e5e5e5 0%, #d0d0d0 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+        
+        .reshaping-visual::before {
+            content: '[Subtle video loop or before/after transformation]';
+            position: absolute;
+            padding: 12px 20px;
+            background: rgba(0,0,0,0.6);
+            color: #fff;
+            font-size: 12px;
+            border-radius: 6px;
+        }
+        
+        /* ===== SECTION STYLING ===== */
+        .section {
+            padding: 110px 56px;
+        }
+        
+        .section-sm {
+            padding: 70px 56px;
+        }
+        
+        .section-dark {
+            background: #111;
+            color: #fff;
+        }
+        
+        .section-cream {
+            background: #faf9f7;
+        }
+        
+        .section-header {
+            max-width: 620px;
+            margin-bottom: 72px;
+        }
+        
+        .section-header.center {
+            text-align: center;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .section-label {
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: #22c55e;
+            margin-bottom: 18px;
+            font-weight: 600;
+        }
+        
+        .section-dark .section-label {
+            color: #22c55e;
+        }
+        
+        .section-header h2 {
+            font-family: 'DM Serif Display', Georgia, serif;
+            font-size: 44px;
+            color: #111;
+            margin-bottom: 20px;
+            font-weight: 400;
+            letter-spacing: -0.5px;
+            line-height: 1.15;
+        }
+        
+        .section-dark .section-header h2 {
+            color: #fff;
+        }
+        
+        .section-header p {
+            font-size: 17px;
+            color: #666;
+            line-height: 1.7;
+        }
+        
+        .section-dark .section-header p {
+            color: #888;
+        }
+        
+        /* ===== BENEFITS GRID (Type Five 3-Pillar Style) ===== */
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 64px;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+        
+        .benefit-item {
+            text-align: left;
+        }
+        
+        .benefit-icon {
+            width: 64px;
+            height: 64px;
+            background: #f5f5f5;
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 24px;
+            position: relative;
+        }
+        
+        .benefit-icon::before {
+            content: attr(data-icon);
+            font-size: 28px;
+        }
+        
+        .benefit-item h3 {
+            font-size: 19px;
+            color: #111;
+            margin-bottom: 12px;
+            font-weight: 600;
+            letter-spacing: -0.2px;
+        }
+        
+        .benefit-item p {
+            font-size: 15px;
+            color: #666;
+            line-height: 1.7;
+        }
+        
+        /* ===== OPTIONS CARDS (Type Five Large Image Style) ===== */
+        .options-stack {
+            display: flex;
+            flex-direction: column;
+            gap: 32px;
+        }
+        
+        .option-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0;
+            background: #faf9f7;
+            border-radius: 20px;
+            overflow: hidden;
+            min-height: 480px;
+        }
+        
+        .option-row.reverse {
+            direction: rtl;
+        }
+        
+        .option-row.reverse > * {
+            direction: ltr;
+        }
+        
+        .option-row.featured {
+            background: #111;
+            color: #fff;
+        }
+        
+        .option-image {
+            background: linear-gradient(135deg, #e0e0e0 0%, #c8c8c8 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #999;
+            font-size: 13px;
+            position: relative;
+        }
+        
+        .option-row.featured .option-image {
+            background: linear-gradient(135deg, #1a3a1a 0%, #2d5a2d 100%);
+            color: #4ade80;
+        }
+        
+        .option-content {
+            padding: 72px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        
+        .option-badge {
+            display: inline-block;
+            padding: 7px 14px;
+            background: #22c55e;
+            color: #fff;
+            border-radius: 20px;
+            font-size: 10px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 28px;
+            width: fit-content;
+        }
+        
+        .option-content h3 {
+            font-family: 'DM Serif Display', Georgia, serif;
+            font-size: 34px;
+            margin-bottom: 8px;
+            font-weight: 400;
+            letter-spacing: -0.3px;
+        }
+        
+        .option-row.featured .option-content h3 {
+            color: #fff;
+        }
+        
+        .option-tagline {
+            font-size: 15px;
+            color: #22c55e;
+            margin-bottom: 20px;
+            font-weight: 500;
+        }
+        
+        .option-content > p {
+            font-size: 16px;
+            color: #666;
+            line-height: 1.75;
+            margin-bottom: 32px;
+        }
+        
+        .option-row.featured .option-content > p {
+            color: #999;
+        }
+        
+        .option-list {
+            margin-bottom: 36px;
+        }
+        
+        .option-list-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 14px;
+            margin-bottom: 14px;
+            font-size: 15px;
+            color: #555;
+        }
+        
+        .option-row.featured .option-list-item {
+            color: #bbb;
+        }
+        
+        .option-list-item .check {
+            color: #22c55e;
+            font-weight: bold;
+            margin-top: 2px;
+        }
+        
+        /* ===== COMMITMENT STATEMENT (Type Five Style) ===== */
+        .commitment-section {
+            padding: 120px 56px;
+            background: #fff;
+            text-align: center;
+        }
+        
+        .commitment-statement {
+            font-family: 'DM Serif Display', Georgia, serif;
+            font-size: 36px;
+            color: #111;
+            max-width: 900px;
+            margin: 0 auto 48px;
+            line-height: 1.35;
+            letter-spacing: -0.5px;
+        }
+        
+        /* ===== TESTIMONIALS (Type Five 3-Card Style) ===== */
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 32px;
+        }
+        
+        .testimonial-card {
+            background: #faf9f7;
+            border-radius: 16px;
+            overflow: hidden;
+        }
+        
+        .testimonial-card-image {
+            height: 240px;
+            background: linear-gradient(135deg, #ddd 0%, #c5c5c5 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #999;
+            font-size: 12px;
+        }
+        
+        .testimonial-card-content {
+            padding: 32px;
+        }
+        
+        .testimonial-card-quote {
+            font-size: 17px;
+            line-height: 1.6;
+            color: #111;
+            margin-bottom: 24px;
+            font-weight: 500;
+        }
+        
+        .testimonial-card-author {
+            font-size: 14px;
+            color: #888;
+        }
+        
+        .testimonial-card-author strong {
+            color: #333;
+            display: block;
+            margin-bottom: 2px;
+        }
+        
+        /* ===== "YOU CHOOSE, WE DELIVER" SECTION (Type Five Style) ===== */
+        .handoff-section {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            min-height: 550px;
+        }
+        
+        .handoff-visual {
+            background: linear-gradient(135deg, #e8e8e8 0%, #d0d0d0 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+        
+        .handoff-visual::before {
+            content: '[Video: Project transformation timeline]';
+            position: absolute;
+            padding: 12px 20px;
+            background: rgba(0,0,0,0.6);
+            color: #fff;
+            font-size: 12px;
+            border-radius: 6px;
+        }
+        
+        .handoff-content {
+            padding: 100px 80px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            background: #fff;
+        }
+        
+        .handoff-content h2 {
+            font-family: 'DM Serif Display', Georgia, serif;
+            font-size: 38px;
+            color: #111;
+            margin-bottom: 12px;
+            font-weight: 400;
+            letter-spacing: -0.3px;
+            line-height: 1.2;
+        }
+        
+        .handoff-content .subtitle {
+            font-size: 17px;
+            color: #555;
+            line-height: 1.75;
+            margin-bottom: 32px;
+            max-width: 440px;
+        }
+        
+        /* ===== PROCESS STEPS ===== */
+        .process-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 56px;
+        }
+        
+        .process-step {
+            position: relative;
+        }
+        
+        .process-number {
+            font-size: 72px;
+            font-weight: 700;
+            color: #f0f0f0;
+            line-height: 1;
+            margin-bottom: 20px;
+            font-family: 'DM Sans', sans-serif;
+        }
+        
+        .section-dark .process-number {
+            color: #1a1a1a;
+        }
+        
+        .process-step h3 {
+            font-size: 20px;
+            color: #111;
+            margin-bottom: 12px;
+            font-weight: 600;
+        }
+        
+        .section-dark .process-step h3 {
+            color: #fff;
+        }
+        
+        .process-step p {
+            font-size: 15px;
+            color: #666;
+            line-height: 1.7;
+            margin-bottom: 16px;
+        }
+        
+        .section-dark .process-step p {
+            color: #888;
+        }
+        
+        .process-time {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 13px;
+            color: #22c55e;
+            font-weight: 500;
+        }
+        
+        /* ===== STATS BAR ===== */
+        .stats-bar {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 48px;
+            padding: 72px 56px;
+            background: #111;
+        }
+        
+        .stat-item {
+            text-align: center;
+        }
+        
+        .stat-number {
+            font-size: 52px;
+            font-weight: 700;
+            color: #fff;
+            margin-bottom: 8px;
+            letter-spacing: -1px;
+            font-family: 'DM Sans', sans-serif;
+        }
+        
+        .stat-number span {
+            color: #22c55e;
+        }
+        
+        .stat-label {
+            font-size: 14px;
+            color: #888;
+        }
+        
+        /* ===== DUAL CTA FOOTER (Type Five Style) ===== */
+        .pre-footer-cta {
+            padding: 100px 56px;
+            background: #fff;
+            text-align: center;
+        }
+        
+        .pre-footer-cta h2 {
+            font-family: 'DM Serif Display', Georgia, serif;
+            font-size: 38px;
+            color: #111;
+            margin-bottom: 16px;
+            letter-spacing: -0.5px;
+        }
+        
+        .pre-footer-cta p {
+            font-size: 17px;
+            color: #666;
+            margin-bottom: 36px;
+        }
+        
+        .consultation-cta {
+            padding: 60px 56px;
+            background: #faf9f7;
+            text-align: center;
+            border-top: 1px solid #eee;
+        }
+        
+        .consultation-cta h3 {
+            font-size: 20px;
+            color: #111;
+            margin-bottom: 12px;
+            font-weight: 600;
+        }
+        
+        .consultation-cta p {
+            font-size: 15px;
+            color: #666;
+            margin-bottom: 24px;
+        }
+        
+        /* ===== FINAL CTA ===== */
+        .final-cta {
+            text-align: center;
+            padding: 120px 56px;
+            background: #111;
+        }
+        
+        .final-cta h2 {
+            font-family: 'DM Serif Display', Georgia, serif;
+            font-size: 52px;
+            color: #fff;
+            margin-bottom: 20px;
+            font-weight: 400;
+            letter-spacing: -0.5px;
+        }
+        
+        .final-cta p {
+            font-size: 18px;
+            color: #888;
+            margin-bottom: 40px;
+        }
+        
+        /* ===== FOOTER ===== */
+        .footer {
+            background: #0a0a0a;
+            color: #888;
+            padding: 80px 56px 40px;
+        }
+        
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 64px;
+            margin-bottom: 64px;
+        }
+        
+        .footer-brand p {
+            font-size: 14px;
+            line-height: 1.7;
+            max-width: 280px;
+        }
+        
+        .footer-col h4 {
+            color: #fff;
+            font-size: 13px;
+            font-weight: 600;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .footer-col a {
+            display: block;
+            color: #888;
+            text-decoration: none;
+            font-size: 14px;
+            margin-bottom: 12px;
+            transition: color 0.2s;
+        }
+        
+        .footer-col a:hover {
+            color: #fff;
+        }
+        
+        .footer-bottom {
+            display: flex;
+            justify-content: space-between;
+            padding-top: 32px;
+            border-top: 1px solid #222;
+            font-size: 13px;
+            color: #666;
+        }
+        
+        /* ===== FAQ ===== */
+        .faq-list {
+            max-width: 720px;
+        }
+        
+        .faq-item {
+            border-bottom: 1px solid #eee;
+            padding: 32px 0;
+        }
+        
+        .faq-question {
+            font-size: 18px;
+            font-weight: 600;
+            color: #111;
+            margin-bottom: 16px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .faq-question::after {
+            content: '+';
+            font-size: 24px;
+            color: #999;
+            font-weight: 300;
+        }
+        
+        .faq-answer {
+            font-size: 16px;
+            color: #666;
+            line-height: 1.75;
+        }
+        
+        /* ===== FORM STYLES ===== */
+        .form-container {
+            max-width: 560px;
+            background: #fff;
+            padding: 48px;
+            border-radius: 16px;
+            box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+        }
+        
+        .form-title {
+            font-family: 'DM Serif Display', Georgia, serif;
+            font-size: 28px;
+            color: #111;
+            margin-bottom: 8px;
+        }
+        
+        .form-subtitle {
+            font-size: 15px;
+            color: #666;
+            margin-bottom: 32px;
+        }
+        
+        .form-group {
+            margin-bottom: 24px;
+        }
+        
+        .form-label {
+            display: block;
+            font-size: 14px;
+            font-weight: 500;
+            color: #333;
+            margin-bottom: 8px;
+        }
+        
+        .form-label .required {
+            color: #ef4444;
+        }
+        
+        .form-input,
+        .form-select,
+        .form-textarea {
+            width: 100%;
+            padding: 14px 16px;
+            border: 1.5px solid #e5e5e5;
+            border-radius: 8px;
+            font-size: 15px;
+            font-family: inherit;
+            transition: border-color 0.2s;
+        }
+        
+        .form-input:focus,
+        .form-select:focus,
+        .form-textarea:focus {
+            outline: none;
+            border-color: #22c55e;
+        }
+        
+        .form-textarea {
+            min-height: 100px;
+            resize: vertical;
+        }
+        
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+        }
+        
+        .form-submit {
+            width: 100%;
+            padding: 16px;
+            background: #22c55e;
+            color: #fff;
+            border: none;
+            border-radius: 8px;
+            font-size: 15px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        
+        .form-submit:hover {
+            background: #16a34a;
+        }
+        
+        .form-note {
+            text-align: center;
+            font-size: 13px;
+            color: #888;
+            margin-top: 16px;
+        }
+        
+        /* ===== TEAM STYLES ===== */
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 40px;
+        }
+        
+        .team-member {
+            text-align: center;
+        }
+        
+        .team-photo {
+            width: 140px;
+            height: 140px;
+            background: #e5e5e5;
+            border-radius: 50%;
+            margin: 0 auto 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #999;
+            font-size: 11px;
+        }
+        
+        .team-member h4 {
+            font-size: 17px;
+            color: #111;
+            margin-bottom: 4px;
+            font-weight: 600;
+        }
+        
+        .team-member p {
+            font-size: 14px;
+            color: #888;
+        }
+        
+        /* ===== AREAS GRID ===== */
+        .areas-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            justify-content: center;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .area-tag {
+            padding: 12px 24px;
+            background: #fff;
+            border: 1px solid #e5e5e5;
+            border-radius: 40px;
+            font-size: 14px;
+            color: #555;
+            font-weight: 500;
+        }
+        
+        /* ===== WHY GRID (2x2) ===== */
+        .why-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 48px 72px;
+        }
+        
+        .why-item {
+            display: flex;
+            gap: 24px;
+        }
+        
+        .why-icon {
+            width: 52px;
+            height: 52px;
+            background: #f5f5f5;
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            flex-shrink: 0;
+        }
+        
+        .why-item h3 {
+            font-size: 18px;
+            color: #111;
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+        
+        .why-item p {
+            font-size: 15px;
+            color: #666;
+            line-height: 1.65;
+        }
+        
+        /* ===== COMPARISON TABLE ===== */
+        .comparison-table {
+            width: 100%;
+            max-width: 900px;
+            margin: 0 auto;
+            border-collapse: collapse;
+        }
+        
+        .comparison-table th,
+        .comparison-table td {
+            padding: 20px 24px;
+            text-align: left;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .comparison-table th {
+            font-size: 13px;
+            font-weight: 600;
+            color: #888;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .comparison-table td {
+            font-size: 15px;
+            color: #555;
+        }
+        
+        .comparison-table td:first-child {
+            font-weight: 600;
+            color: #111;
+        }
+        
+        .check-cell {
+            color: #22c55e;
+            font-weight: bold;
+        }
+        
+        .x-cell {
+            color: #ef4444;
+        }
+    </style>
+</head>
+<body>
+    <!-- Wireframe Navigation -->
+    <nav class="wireframe-nav">
+        <span class="nav-label">V4 Wireframes</span>
+        <button class="active" onclick="showPage('home')">Home</button>
+        <button onclick="showPage('options')">Your Options</button>
+        <button onclick="showPage('how')">How It Works</button>
+        <button onclick="showPage('form')">Get Started</button>
+        <button onclick="showPage('about')">About</button>
+        <span class="version-badge">V4 TYPE FIVE</span>
+        <span class="version-notes">Emotive copy • Serif headlines • Video sections • Dual CTAs</span>
+    </nav>
+
+    <!-- ============================================ -->
+    <!-- PAGE 1: HOME (Enhanced Type Five Style) -->
+    <!-- ============================================ -->
+    <div id="home" class="page active">
+        
+        <nav class="site-nav">
+            <div class="logo">Everyday <span>Properties</span></div>
+            <div class="nav-links">
+                <a href="#">Your Options</a>
+                <a href="#">How It Works</a>
+                <a href="#">About</a>
+                <a href="#" class="btn">Start here</a>
+            </div>
+        </nav>
+        
+        <!-- Hero - Type Five Emotive Style -->
+        <section class="hero">
+            <div class="hero-content">
+                <h1>A fresh start for your home. And for you.</h1>
+                <p class="hero-subtitle">Whether you're ready to move on, need help with a property that needs work, or simply want to explore what's possible — we're here with real options, not pressure.</p>
+                <div class="hero-cta-group">
+                    <a href="#" class="btn btn-large">Start here</a>
+                    <a href="#" class="btn btn-outline btn-large">See how it works</a>
+                </div>
+            </div>
+            <div class="hero-image"></div>
+        </section>
+        
+        <!-- Trust Ticker -->
+        <div class="trust-ticker">
+            <div class="ticker-content">
+                <div class="ticker-item"><strong>150+</strong> Twin Cities families helped</div>
+                <div class="ticker-item"><strong>$2.4M</strong> additional value created</div>
+                <div class="ticker-item"><strong>24hr</strong> response time</div>
+                <div class="ticker-item"><strong>100%</strong> transparent pricing</div>
+                <div class="ticker-item"><strong>150+</strong> Twin Cities families helped</div>
+                <div class="ticker-item"><strong>$2.4M</strong> additional value created</div>
+                <div class="ticker-item"><strong>24hr</strong> response time</div>
+                <div class="ticker-item"><strong>100%</strong> transparent pricing</div>
+            </div>
+        </div>
+        
+        <!-- Re-shaping Section (Type Five Pattern) -->
+        <section class="reshaping-section">
+            <div class="reshaping-content">
+                <h2>Re-shaping the way homeowners sell.</h2>
+                <p>Most investors compete on one thing: buying as cheap as possible. We built something different — a company that gives you real options and helps you get the outcome you actually want.</p>
+                <a href="#" class="btn">Explore your options</a>
+            </div>
+            <div class="reshaping-visual"></div>
+        </section>
+        
+        <!-- Benefits Grid (Type Five 3-Pillar Style) -->
+        <section class="section section-cream">
+            <div class="section-header center">
+                <div class="section-label">Why Everyday</div>
+                <h2>A better way to sell your home.</h2>
+            </div>
+            
+            <div class="benefits-grid">
+                <div class="benefit-item">
+                    <div class="benefit-icon" data-icon="🏡"></div>
+                    <h3>Options, not ultimatums</h3>
+                    <p>Cash offer, renovation partnership, or bridge to market value — you choose the path that fits your life.</p>
+                </div>
+                
+                <div class="benefit-item">
+                    <div class="benefit-icon" data-icon="⚡"></div>
+                    <h3>Answers in 24 hours</h3>
+                    <p>No weeks of waiting. We respond same-day and give you real numbers to consider, fast.</p>
+                </div>
+                
+                <div class="benefit-item">
+                    <div class="benefit-icon" data-icon="🤝"></div>
+                    <h3>Honest, always</h3>
+                    <p>If we're not the right fit, we'll tell you. We'd rather earn trust than close a bad deal.</p>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Options Preview -->
+        <section class="section">
+            <div class="section-header">
+                <div class="section-label">Your Options</div>
+                <h2>Three paths forward. You choose.</h2>
+                <p>Every homeowner's situation is different. We offer multiple ways to help, so you can pick what works for you.</p>
+            </div>
+            
+            <div class="options-stack">
+                <!-- Option 1: Cash Offer -->
+                <div class="option-row">
+                    <div class="option-image">[Family handing over keys, relief on faces]</div>
+                    <div class="option-content">
+                        <h3>Cash Offer</h3>
+                        <div class="option-tagline">Simple. Fast. Done.</div>
+                        <p>Just want to move on? We'll buy your home as-is, on your timeline. No repairs, no showings, no uncertainty.</p>
+                        <div class="option-list">
+                            <div class="option-list-item"><span class="check">✓</span> Close in as little as 7 days</div>
+                            <div class="option-list-item"><span class="check">✓</span> No repairs or cleanup required</div>
+                            <div class="option-list-item"><span class="check">✓</span> Certainty — no financing fall-throughs</div>
+                        </div>
+                        <a href="#" class="btn">Get a cash offer</a>
+                    </div>
+                </div>
+                
+                <!-- Option 2: Remodel Partnership (Featured) -->
+                <div class="option-row reverse featured">
+                    <div class="option-image">[Before/after transformation of kitchen]</div>
+                    <div class="option-content">
+                        <div class="option-badge">Most Popular</div>
+                        <h3>Remodel Partnership</h3>
+                        <div class="option-tagline">We invest. You profit.</div>
+                        <p>Your home has potential. We fund and manage the renovation, then help you sell at top dollar. You keep the upside.</p>
+                        <div class="option-list">
+                            <div class="option-list-item"><span class="check">✓</span> We fund 100% of the renovation</div>
+                            <div class="option-list-item"><span class="check">✓</span> Professional project management</div>
+                            <div class="option-list-item"><span class="check">✓</span> Avg. $75K more in your pocket</div>
+                        </div>
+                        <a href="#" class="btn btn-white">Learn more</a>
+                    </div>
+                </div>
+                
+                <!-- Option 3: Bridge Solution -->
+                <div class="option-row">
+                    <div class="option-image">[Homeowner reviewing documents with advisor]</div>
+                    <div class="option-content">
+                        <h3>Bridge to Goal</h3>
+                        <div class="option-tagline">Hit your number.</div>
+                        <p>Have a specific price in mind? We'll help you bridge the gap between where you are and where you need to be.</p>
+                        <div class="option-list">
+                            <div class="option-list-item"><span class="check">✓</span> Flexible financing solutions</div>
+                            <div class="option-list-item"><span class="check">✓</span> Work toward your target price</div>
+                            <div class="option-list-item"><span class="check">✓</span> Expert guidance throughout</div>
+                        </div>
+                        <a href="#" class="btn">Explore bridge options</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Commitment Statement (Type Five Pattern) -->
+        <section class="commitment-section">
+            <p class="commitment-statement">"Our commitment to honest guidance combined with real options means you get the outcome that's right for your situation — not just ours."</p>
+            <a href="#" class="btn btn-outline">Meet our team</a>
+        </section>
+        
+        <!-- Testimonials (Type Five 3-Card Style) -->
+        <section class="section section-cream">
+            <div class="section-header center">
+                <div class="section-label">Success Stories</div>
+                <h2>Hear from homeowners like you.</h2>
+            </div>
+            
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-card-image">[Kersti in front of her updated home]</div>
+                    <div class="testimonial-card-content">
+                        <p class="testimonial-card-quote">"I got all the benefits of a full renovation without any of the stress. They handled everything."</p>
+                        <p class="testimonial-card-author"><strong>Kersti M.</strong>Plymouth, MN — Remodel Partnership</p>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <div class="testimonial-card-image">[John at closing]</div>
+                    <div class="testimonial-card-content">
+                        <p class="testimonial-card-quote">"We needed to move fast for a job relocation. They closed in 10 days with zero hassle."</p>
+                        <p class="testimonial-card-author"><strong>John & Lisa R.</strong>Eden Prairie, MN — Cash Offer</p>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <div class="testimonial-card-image">[Julie with family]</div>
+                    <div class="testimonial-card-content">
+                        <p class="testimonial-card-quote">"After inheriting my parents' home, I didn't know what to do. They walked me through every option with patience."</p>
+                        <p class="testimonial-card-author"><strong>Julie T.</strong>St. Louis Park, MN — Cash Offer</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- "You Choose, We Deliver" Section (Type Five Pattern) -->
+        <section class="handoff-section">
+            <div class="handoff-visual"></div>
+            <div class="handoff-content">
+                <h2>You choose your path. We handle the rest.</h2>
+                <p class="subtitle">Our team of renovation experts, agents, and transaction coordinators will guide you from first conversation to closing day, ensuring a seamless experience.</p>
+                <a href="#" class="btn">See how it works</a>
+            </div>
+        </section>
+        
+        <!-- Stats Bar -->
+        <div class="stats-bar">
+            <div class="stat-item">
+                <div class="stat-number">150<span>+</span></div>
+                <div class="stat-label">Families helped</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">$75K</div>
+                <div class="stat-label">Avg. extra with partnership</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">45</div>
+                <div class="stat-label">Avg. days to close</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">4.9<span>★</span></div>
+                <div class="stat-label">Google rating</div>
+            </div>
+        </div>
+        
+        <!-- Pre-Footer CTA (Type Five Dual CTA Pattern) -->
+        <section class="pre-footer-cta">
+            <h2>Ready to see your options?</h2>
+            <p>Let's find out what's possible for your home — no obligation, no pressure.</p>
+            <a href="#" class="btn btn-green btn-large">Get started →</a>
+        </section>
+        
+        <div class="consultation-cta">
+            <h3>Prefer to talk first?</h3>
+            <p>Schedule a free 15-minute call to discuss your situation and learn about your options.</p>
+            <a href="#" class="btn btn-outline">Book a call</a>
+        </div>
+        
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <div class="logo" style="margin-bottom: 20px; color: #fff;">Everyday <span style="color: #666;">Properties</span></div>
+                    <p>Helping Twin Cities homeowners find better options for properties that need work.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Explore</h4>
+                    <a href="#">Your Options</a>
+                    <a href="#">How It Works</a>
+                    <a href="#">About Us</a>
+                    <a href="#">FAQ</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Areas</h4>
+                    <a href="#">Plymouth</a>
+                    <a href="#">Maple Grove</a>
+                    <a href="#">Eden Prairie</a>
+                    <a href="#">All Areas →</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact</h4>
+                    <a href="#">(612) 555-0123</a>
+                    <a href="#">hello@everydayproperties.com</a>
+                    <a href="#">Minneapolis, MN</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <span>© 2026 Everyday Properties</span>
+                <span>Privacy • Terms</span>
+            </div>
+        </footer>
+    </div>
+
+    <!-- ============================================ -->
+    <!-- PAGE 2: YOUR OPTIONS (Detail Page) -->
+    <!-- ============================================ -->
+    <div id="options" class="page">
+        
+        <nav class="site-nav">
+            <div class="logo">Everyday <span>Properties</span></div>
+            <div class="nav-links">
+                <a href="#" style="color: #111;">Your Options</a>
+                <a href="#">How It Works</a>
+                <a href="#">About</a>
+                <a href="#" class="btn">Start here</a>
+            </div>
+        </nav>
+        
+        <!-- Hero -->
+        <section class="section">
+            <div class="section-header" style="max-width: 700px;">
+                <div class="section-label">Your Options</div>
+                <h1 style="font-family: 'DM Serif Display', serif; font-size: 52px; color: #111; margin-bottom: 24px; font-weight: 400; letter-spacing: -0.5px; line-height: 1.1;">Three paths. One goal: <br>the right outcome for you.</h1>
+                <p style="font-size: 18px; color: #555; line-height: 1.7;">Not every situation calls for the same solution. That's why we offer multiple ways to help — so you can choose the path that fits your life.</p>
+            </div>
+        </section>
+        
+        <!-- Options Detail -->
+        <section class="section section-cream" style="padding-top: 0;">
+            <div class="options-stack">
+                <!-- Cash Offer -->
+                <div class="option-row">
+                    <div class="option-image">[Warm family moment — moving boxes, new chapter]</div>
+                    <div class="option-content">
+                        <h3>Cash Offer</h3>
+                        <div class="option-tagline">Simple. Fast. Done.</div>
+                        <p>You want certainty. You want speed. You want to move on without the stress of repairs, showings, or waiting months for a buyer who might back out.</p>
+                        <p style="font-size: 14px; color: #888; margin-bottom: 32px;">We buy your home as-is, close on your timeline, and handle everything. You walk away with cash in hand and one less thing to worry about.</p>
+                        <div class="option-list">
+                            <div class="option-list-item"><span class="check">✓</span> Close in 7-14 days (or on your schedule)</div>
+                            <div class="option-list-item"><span class="check">✓</span> No repairs, cleaning, or showings</div>
+                            <div class="option-list-item"><span class="check">✓</span> No financing contingencies</div>
+                            <div class="option-list-item"><span class="check">✓</span> We pay typical closing costs</div>
+                        </div>
+                        <a href="#" class="btn">Get a cash offer</a>
+                    </div>
+                </div>
+                
+                <!-- Remodel Partnership -->
+                <div class="option-row reverse featured">
+                    <div class="option-image">[Stunning before/after kitchen transformation]</div>
+                    <div class="option-content">
+                        <div class="option-badge">Most Popular</div>
+                        <h3>Remodel Partnership</h3>
+                        <div class="option-tagline">We invest. You profit.</div>
+                        <p>Your home has untapped value. But renovating is expensive, stressful, and time-consuming. What if someone else handled all of that — and you kept the upside?</p>
+                        <p style="font-size: 14px; color: #777; margin-bottom: 32px;">We fund the renovation, manage the contractors, and sell your home at top dollar. You don't lift a finger, and you walk away with significantly more money than a cash offer.</p>
+                        <div class="option-list">
+                            <div class="option-list-item"><span class="check">✓</span> $0 out of pocket — we fund everything</div>
+                            <div class="option-list-item"><span class="check">✓</span> Professional design and project management</div>
+                            <div class="option-list-item"><span class="check">✓</span> Avg. $75K more than cash offers</div>
+                            <div class="option-list-item"><span class="check">✓</span> Timeline: 60-90 days typically</div>
+                        </div>
+                        <a href="#" class="btn btn-white">See how it works</a>
+                    </div>
+                </div>
+                
+                <!-- Bridge Solution -->
+                <div class="option-row">
+                    <div class="option-image">[Homeowner confidently reviewing options]</div>
+                    <div class="option-content">
+                        <h3>Bridge to Goal</h3>
+                        <div class="option-tagline">Hit your number.</div>
+                        <p>You have a number in mind — maybe it's what you need for your next home, or to pay off debt, or to feel good about the sale. Let's work together to get you there.</p>
+                        <p style="font-size: 14px; color: #888; margin-bottom: 32px;">Bridge solutions combine flexible financing with our expertise to help you reach your target price, whether through strategic improvements, timing, or creative structuring.</p>
+                        <div class="option-list">
+                            <div class="option-list-item"><span class="check">✓</span> Flexible financing structures</div>
+                            <div class="option-list-item"><span class="check">✓</span> Strategic improvement guidance</div>
+                            <div class="option-list-item"><span class="check">✓</span> Work toward your target price</div>
+                            <div class="option-list-item"><span class="check">✓</span> No pressure — collaborative approach</div>
+                        </div>
+                        <a href="#" class="btn">Explore bridge options</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Comparison Table -->
+        <section class="section">
+            <div class="section-header center">
+                <h2>Compare your options at a glance.</h2>
+            </div>
+            
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th>Cash Offer</th>
+                        <th>Remodel Partnership</th>
+                        <th>Bridge to Goal</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Timeline</td>
+                        <td>7-14 days</td>
+                        <td>60-90 days</td>
+                        <td>Varies</td>
+                    </tr>
+                    <tr>
+                        <td>Repairs needed</td>
+                        <td class="check-cell">None</td>
+                        <td class="check-cell">None (we handle)</td>
+                        <td>Minimal / Strategic</td>
+                    </tr>
+                    <tr>
+                        <td>Your effort</td>
+                        <td class="check-cell">Minimal</td>
+                        <td class="check-cell">Minimal</td>
+                        <td>Some involvement</td>
+                    </tr>
+                    <tr>
+                        <td>Sale price potential</td>
+                        <td>Below market</td>
+                        <td class="check-cell">Full market value</td>
+                        <td>Market value</td>
+                    </tr>
+                    <tr>
+                        <td>Best for</td>
+                        <td>Speed & simplicity</td>
+                        <td>Maximum profit</td>
+                        <td>Specific price target</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+        
+        <!-- FAQ -->
+        <section class="section section-cream">
+            <div class="section-header">
+                <div class="section-label">Common Questions</div>
+                <h2>Questions about your options.</h2>
+            </div>
+            
+            <div class="faq-list">
+                <div class="faq-item">
+                    <div class="faq-question">How do you determine your cash offer?</div>
+                    <div class="faq-answer">We analyze recent sales of similar homes, assess repair needs, and factor in our holding and selling costs. Our goal is to make a fair offer that works for both of us — we'll walk you through exactly how we arrived at the number.</div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">What if I want to explore multiple options?</div>
+                    <div class="faq-answer">That's exactly what we encourage. We'll present all three options with clear numbers so you can compare. Many homeowners are surprised to find the partnership option puts significantly more money in their pocket than they expected.</div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">How does the remodel partnership actually work?</div>
+                    <div class="faq-answer">We fund 100% of the renovation costs, manage the project from start to finish, then list the home at full market value. At closing, renovation costs plus a pre-agreed share are deducted, and you keep the rest. Most sellers net $50-100K more than a cash offer.</div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">Is there any obligation when I reach out?</div>
+                    <div class="faq-answer">None at all. We'll have a conversation, ask about your situation, and present options if we can help. If we're not the right fit or you decide to go another direction, no hard feelings. We'd rather earn trust than pressure anyone.</div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Final CTA -->
+        <section class="final-cta">
+            <h2>Let's find the right path for you.</h2>
+            <p>Get a no-obligation assessment of your options in 24 hours.</p>
+            <a href="#" class="btn btn-green btn-large">Get started →</a>
+        </section>
+        
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <div class="logo" style="margin-bottom: 20px; color: #fff;">Everyday <span style="color: #666;">Properties</span></div>
+                    <p>Helping Twin Cities homeowners find better options for properties that need work.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Explore</h4>
+                    <a href="#">Your Options</a>
+                    <a href="#">How It Works</a>
+                    <a href="#">About Us</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Areas</h4>
+                    <a href="#">Plymouth</a>
+                    <a href="#">Maple Grove</a>
+                    <a href="#">All Areas →</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact</h4>
+                    <a href="#">(612) 555-0123</a>
+                    <a href="#">hello@everydayproperties.com</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <span>© 2026 Everyday Properties</span>
+                <span>Privacy • Terms</span>
+            </div>
+        </footer>
+    </div>
+
+    <!-- ============================================ -->
+    <!-- PAGE 3: HOW IT WORKS -->
+    <!-- ============================================ -->
+    <div id="how" class="page">
+        
+        <nav class="site-nav">
+            <div class="logo">Everyday <span>Properties</span></div>
+            <div class="nav-links">
+                <a href="#">Your Options</a>
+                <a href="#" style="color: #111;">How It Works</a>
+                <a href="#">About</a>
+                <a href="#" class="btn">Start here</a>
+            </div>
+        </nav>
+        
+        <!-- Hero -->
+        <section class="section">
+            <div class="section-header" style="max-width: 640px;">
+                <div class="section-label">How It Works</div>
+                <h1 style="font-family: 'DM Serif Display', serif; font-size: 52px; color: #111; margin-bottom: 24px; font-weight: 400; letter-spacing: -0.5px; line-height: 1.1;">Simple from start to close.</h1>
+                <p style="font-size: 18px; color: #555; line-height: 1.7;">No complicated processes. No weeks of uncertainty. Just a straightforward path from first conversation to keys handed over.</p>
+            </div>
+        </section>
+        
+        <!-- Process Steps -->
+        <section class="section section-cream" style="padding-top: 0;">
+            <div class="process-grid">
+                <div class="process-step">
+                    <div class="process-number">01</div>
+                    <h3>Share your situation</h3>
+                    <p>Tell us about your property and what you're hoping to accomplish. Takes about 2 minutes online, or give us a call.</p>
+                    <div class="process-time">⏱ 2 min</div>
+                </div>
+                
+                <div class="process-step">
+                    <div class="process-number">02</div>
+                    <h3>Get your options</h3>
+                    <p>Within 24 hours, we'll present all available paths with clear numbers — cash offer, partnership potential, or bridge solutions.</p>
+                    <div class="process-time">⏱ Within 24 hrs</div>
+                </div>
+                
+                <div class="process-step">
+                    <div class="process-number">03</div>
+                    <h3>Choose your path</h3>
+                    <p>Pick the option that fits your goals. No pressure, no expiring offers. We're here to answer questions until you're ready.</p>
+                    <div class="process-time">⏱ On your timeline</div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- What Happens Next (Detail for each path) -->
+        <section class="section">
+            <div class="section-header center">
+                <h2>What happens after you choose.</h2>
+                <p>Each path has its own process. Here's what to expect.</p>
+            </div>
+            
+            <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; max-width: 1100px; margin: 0 auto;">
+                <div style="background: #faf9f7; border-radius: 16px; padding: 40px;">
+                    <h4 style="font-size: 13px; color: #22c55e; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 20px;">Cash Offer Path</h4>
+                    <div style="font-size: 14px; color: #666; line-height: 1.8;">
+                        <p style="margin-bottom: 16px;"><strong style="color: #111;">Day 1-2:</strong> Property visit, final offer</p>
+                        <p style="margin-bottom: 16px;"><strong style="color: #111;">Day 3-5:</strong> Contract signed, title work begins</p>
+                        <p style="margin-bottom: 16px;"><strong style="color: #111;">Day 7-14:</strong> Close at title company, funds wired</p>
+                        <p><strong style="color: #22c55e;">Total: 1-2 weeks</strong></p>
+                    </div>
+                </div>
+                
+                <div style="background: #111; border-radius: 16px; padding: 40px; color: #fff;">
+                    <h4 style="font-size: 13px; color: #22c55e; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 20px;">Partnership Path</h4>
+                    <div style="font-size: 14px; color: #999; line-height: 1.8;">
+                        <p style="margin-bottom: 16px;"><strong style="color: #fff;">Week 1-2:</strong> Design plan, contractor scheduling</p>
+                        <p style="margin-bottom: 16px;"><strong style="color: #fff;">Week 3-8:</strong> Renovation (you're not involved)</p>
+                        <p style="margin-bottom: 16px;"><strong style="color: #fff;">Week 9-12:</strong> List, sell, close at top dollar</p>
+                        <p><strong style="color: #22c55e;">Total: 60-90 days</strong></p>
+                    </div>
+                </div>
+                
+                <div style="background: #faf9f7; border-radius: 16px; padding: 40px;">
+                    <h4 style="font-size: 13px; color: #22c55e; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 20px;">Bridge Path</h4>
+                    <div style="font-size: 14px; color: #666; line-height: 1.8;">
+                        <p style="margin-bottom: 16px;"><strong style="color: #111;">Week 1:</strong> Strategy session, target pricing</p>
+                        <p style="margin-bottom: 16px;"><strong style="color: #111;">Ongoing:</strong> Customized plan execution</p>
+                        <p style="margin-bottom: 16px;"><strong style="color: #111;">Close:</strong> When you hit your goal</p>
+                        <p><strong style="color: #22c55e;">Total: Varies by plan</strong></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Commitment -->
+        <section class="commitment-section" style="background: #faf9f7;">
+            <p class="commitment-statement">"From your first call to closing day, you'll work with the same team. We guide you through every step, handle the details, and make sure nothing falls through the cracks."</p>
+        </section>
+        
+        <!-- Final CTA -->
+        <section class="final-cta">
+            <h2>Ready to get started?</h2>
+            <p>Takes 2 minutes. Options in 24 hours.</p>
+            <a href="#" class="btn btn-green btn-large">Start here →</a>
+        </section>
+        
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <div class="logo" style="margin-bottom: 20px; color: #fff;">Everyday <span style="color: #666;">Properties</span></div>
+                    <p>Helping Twin Cities homeowners find better options.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Explore</h4>
+                    <a href="#">Your Options</a>
+                    <a href="#">How It Works</a>
+                    <a href="#">About Us</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Areas</h4>
+                    <a href="#">Plymouth</a>
+                    <a href="#">Maple Grove</a>
+                    <a href="#">All Areas →</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact</h4>
+                    <a href="#">(612) 555-0123</a>
+                    <a href="#">hello@everydayproperties.com</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <span>© 2026 Everyday Properties</span>
+                <span>Privacy • Terms</span>
+            </div>
+        </footer>
+    </div>
+
+    <!-- ============================================ -->
+    <!-- PAGE 4: GET STARTED (Form) -->
+    <!-- ============================================ -->
+    <div id="form" class="page">
+        
+        <nav class="site-nav">
+            <div class="logo">Everyday <span>Properties</span></div>
+            <div class="nav-links">
+                <a href="#">Your Options</a>
+                <a href="#">How It Works</a>
+                <a href="#">About</a>
+                <a href="#" class="btn" style="background: #22c55e;">Start here</a>
+            </div>
+        </nav>
+        
+        <!-- Form Section -->
+        <div class="section" style="min-height: calc(100vh - 120px); display: flex; align-items: center;">
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 100px; width: 100%; align-items: center;">
+                <div>
+                    <div class="section-label">Get Started</div>
+                    <h1 style="font-family: 'DM Serif Display', serif; font-size: 44px; color: #111; margin-bottom: 24px; font-weight: 400; letter-spacing: -0.5px; line-height: 1.15;">Let's see what's possible.</h1>
+                    <p style="font-size: 17px; color: #555; line-height: 1.7; margin-bottom: 40px;">Tell us about your property and situation. We'll respond within 24 hours with all available options — no obligation, no pressure.</p>
+                    
+                    <div style="background: #faf9f7; border-radius: 12px; padding: 24px; margin-bottom: 24px;">
+                        <div style="display: flex; align-items: center; gap: 16px; margin-bottom: 16px;">
+                            <div style="width: 40px; height: 40px; background: #22c55e; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #fff; font-weight: bold;">✓</div>
+                            <div>
+                                <div style="font-weight: 600; color: #111;">Quick response</div>
+                                <div style="font-size: 14px; color: #888;">Options presented within 24 hours</div>
+                            </div>
+                        </div>
+                        <div style="display: flex; align-items: center; gap: 16px; margin-bottom: 16px;">
+                            <div style="width: 40px; height: 40px; background: #22c55e; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #fff; font-weight: bold;">✓</div>
+                            <div>
+                                <div style="font-weight: 600; color: #111;">No obligation</div>
+                                <div style="font-size: 14px; color: #888;">Explore without commitment</div>
+                            </div>
+                        </div>
+                        <div style="display: flex; align-items: center; gap: 16px;">
+                            <div style="width: 40px; height: 40px; background: #22c55e; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #fff; font-weight: bold;">✓</div>
+                            <div>
+                                <div style="font-weight: 600; color: #111;">Multiple options</div>
+                                <div style="font-size: 14px; color: #888;">We present all available paths</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="form-container">
+                    <h2 class="form-title">Tell us about your property</h2>
+                    <p class="form-subtitle">We'll review and get back to you within 24 hours.</p>
+                    
+                    <form>
+                        <div class="form-group">
+                            <label class="form-label">Property Address <span class="required">*</span></label>
+                            <input type="text" class="form-input" placeholder="123 Main St, City, MN">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="form-label">Your Name <span class="required">*</span></label>
+                            <div class="form-row">
+                                <input type="text" class="form-input" placeholder="First">
+                                <input type="text" class="form-input" placeholder="Last">
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="form-label">Phone <span class="required">*</span></label>
+                            <input type="tel" class="form-input" placeholder="(555) 555-5555">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="form-label">Email <span class="required">*</span></label>
+                            <input type="email" class="form-input" placeholder="you@email.com">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="form-label">Property Condition <span class="required">*</span></label>
+                            <select class="form-select">
+                                <option value="">Select...</option>
+                                <option>Needs minor updates</option>
+                                <option>Needs major work</option>
+                                <option>Not sure</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="form-label">Are you the owner? <span class="required">*</span></label>
+                            <select class="form-select">
+                                <option value="">Select...</option>
+                                <option>Yes</option>
+                                <option>Authorized representative</option>
+                                <option>No / Not sure</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="form-label">Timeline</label>
+                            <select class="form-select">
+                                <option value="">How soon are you looking to move forward?</option>
+                                <option>ASAP</option>
+                                <option>1-3 months</option>
+                                <option>3-6 months</option>
+                                <option>Just exploring</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="form-label">Anything else we should know?</label>
+                            <textarea class="form-textarea" placeholder="Tell us about your situation..."></textarea>
+                        </div>
+                        
+                        <button type="submit" class="form-submit">Get my options →</button>
+                        
+                        <p class="form-note">We'll call or email within 24 hours. Prefer a text? Let us know above.</p>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ============================================ -->
+    <!-- PAGE 5: ABOUT -->
+    <!-- ============================================ -->
+    <div id="about" class="page">
+        
+        <nav class="site-nav">
+            <div class="logo">Everyday <span>Properties</span></div>
+            <div class="nav-links">
+                <a href="#">Your Options</a>
+                <a href="#">How It Works</a>
+                <a href="#" style="color: #111;">About</a>
+                <a href="#" class="btn">Start here</a>
+            </div>
+        </nav>
+        
+        <!-- Hero -->
+        <section class="section">
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center;">
+                <div>
+                    <div class="section-label">About Us</div>
+                    <h1 style="font-family: 'DM Serif Display', serif; font-size: 44px; color: #111; margin-bottom: 24px; font-weight: 400; letter-spacing: -0.5px; line-height: 1.15;">We're not like other investors.</h1>
+                    <p style="font-size: 17px; color: #555; line-height: 1.75; margin-bottom: 20px;">Most investors compete on one thing: buying as cheap as possible. They show up with lowball offers, high-pressure tactics, and a "take it or leave it" attitude.</p>
+                    <p style="font-size: 17px; color: #555; line-height: 1.75;">We built Everyday Properties because homeowners with properties that need work deserve real options — not just a race to the bottom.</p>
+                </div>
+                <div style="background: #e5e5e5; border-radius: 20px; height: 420px; display: flex; align-items: center; justify-content: center; color: #999; font-size: 13px;">[Warm team photo — approachable, professional, local]</div>
+            </div>
+        </section>
+        
+        <!-- Values -->
+        <section class="section section-cream">
+            <div class="section-header center">
+                <div class="section-label">Our Values</div>
+                <h2>What we stand for.</h2>
+            </div>
+            
+            <div class="why-grid" style="max-width: 900px; margin: 0 auto;">
+                <div class="why-item">
+                    <div class="why-icon">⚡</div>
+                    <div>
+                        <h3>Modern</h3>
+                        <p>Technology-enabled, professional, responsive. Fast communication, clear processes, and same-day answers.</p>
+                    </div>
+                </div>
+                
+                <div class="why-item">
+                    <div class="why-icon">🎯</div>
+                    <div>
+                        <h3>Efficient</h3>
+                        <p>Your time matters. Same-day responses, clear timelines, quick decisions. No weeks of waiting or runaround.</p>
+                    </div>
+                </div>
+                
+                <div class="why-item">
+                    <div class="why-icon">🤝</div>
+                    <div>
+                        <h3>Straightforward</h3>
+                        <p>Honest, no games. If we're not the best fit, we'll tell you. We'd rather earn trust than close a bad deal.</p>
+                    </div>
+                </div>
+                
+                <div class="why-item">
+                    <div class="why-icon">📍</div>
+                    <div>
+                        <h3>Local</h3>
+                        <p>We live and work in the Twin Cities. We know your neighborhood, your market, and your community.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Team -->
+        <section class="section">
+            <div class="section-header center">
+                <h2>Meet the team.</h2>
+                <p>Local experts who know the Twin Cities market.</p>
+            </div>
+            
+            <div class="team-grid" style="max-width: 900px; margin: 0 auto;">
+                <div class="team-member">
+                    <div class="team-photo">[Photo]</div>
+                    <h4>[Principal]</h4>
+                    <p>Principal</p>
+                </div>
+                <div class="team-member">
+                    <div class="team-photo">[Photo]</div>
+                    <h4>[COO]</h4>
+                    <p>Operations</p>
+                </div>
+                <div class="team-member">
+                    <div class="team-photo">[Photo]</div>
+                    <h4>[Name]</h4>
+                    <p>Acquisitions</p>
+                </div>
+                <div class="team-member">
+                    <div class="team-photo">[Photo]</div>
+                    <h4>[Name]</h4>
+                    <p>Renovations</p>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Areas -->
+        <section class="section section-cream">
+            <div class="section-header center">
+                <h2>Areas we serve.</h2>
+                <p>Focused on the Twin Cities metro.</p>
+            </div>
+            
+            <div class="areas-grid">
+                <div class="area-tag">Plymouth</div>
+                <div class="area-tag">Maple Grove</div>
+                <div class="area-tag">Eden Prairie</div>
+                <div class="area-tag">Edina</div>
+                <div class="area-tag">Hopkins</div>
+                <div class="area-tag">St. Louis Park</div>
+                <div class="area-tag">Minnetonka</div>
+                <div class="area-tag">Golden Valley</div>
+                <div class="area-tag">Bloomington</div>
+                <div class="area-tag">Fridley</div>
+                <div class="area-tag">Brooklyn Park</div>
+                <div class="area-tag">+ More</div>
+            </div>
+        </section>
+        
+        <!-- Final CTA -->
+        <section class="final-cta">
+            <h2>Ready to see your options?</h2>
+            <p>Let's find out what's possible for your home.</p>
+            <a href="#" class="btn btn-green btn-large">Get started →</a>
+        </section>
+        
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <div class="logo" style="margin-bottom: 20px; color: #fff;">Everyday <span style="color: #666;">Properties</span></div>
+                    <p>Helping Twin Cities homeowners find better options.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <a href="#">Your Options</a>
+                    <a href="#">How It Works</a>
+                    <a href="#">About Us</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Areas</h4>
+                    <a href="#">Plymouth</a>
+                    <a href="#">Maple Grove</a>
+                    <a href="#">All Areas →</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact</h4>
+                    <a href="#">(612) 555-0123</a>
+                    <a href="#">hello@everydayproperties.com</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <span>© 2026 Everyday Properties</span>
+                <span>Privacy • Terms</span>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        function showPage(id) {
+            // Hide all pages
+            document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+            // Show target page
+            document.getElementById(id).classList.add('active');
+            // Update nav buttons
+            document.querySelectorAll('.wireframe-nav button').forEach(b => b.classList.remove('active'));
+            event.target.classList.add('active');
+            // Scroll to top
+            window.scrollTo(0, 0);
+        }
+    </script>
+</body>
+</html>
